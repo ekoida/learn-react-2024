@@ -1,0 +1,7 @@
+.carousel {
+    width: 600px;
+    height: auto;
+    border: 1px orangered solid;
+    overflow: hidden;
+    margin: 0 auto;
+}

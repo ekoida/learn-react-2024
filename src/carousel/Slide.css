@@ -1,0 +1,21 @@
+.slide {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    float: left;
+}
+.slide h2 {
+    font-family: sans-serif;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(34, 34, 34, 0.15);
+    padding: 20px;
+}
+
+.slide img {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+}
