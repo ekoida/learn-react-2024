@@ -1,7 +1,21 @@
 .carousel {
     width: 600px;
     height: auto;
-    border: 1px orangered solid;
     overflow: hidden;
     margin: 0 auto;
+    position: relative;
+}
+
+.carousel button {
+    position: absolute;
+    top: 45%;
+    z-index: 2;
+}
+
+.carousel button:first-of-type {
+    left: 1%;
+}
+
+.carousel button:last-of-type {
+    right: 1%;
 }

@@ -6,7 +6,7 @@ const Track = ({data}) => {
     <div className="track">
         {
             data.map((slideData) => (
-                <Slide data={slideData} />
+                <Slide data={slideData} key={slideData.image}/>
             ))
         }
     </div>
