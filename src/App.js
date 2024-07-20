@@ -1,17 +1,10 @@
-import Logo from "./Logo";
-import Subtitle from "./Subtitle";
-import Title from "./Title";
-import InputField from "./InputField";
+import "./App.css";
+import Flake from "./flake/component";
 
 const App = () => {
   return (
-    <div>
-      <Title></Title>
-      <div>
-        WIDGET APP STARTING! <Logo></Logo>
-      </div>
-      <Subtitle></Subtitle>
-      <InputField></InputField>
+    <div className="App">
+      <Flake />
     </div>
   );
 };
