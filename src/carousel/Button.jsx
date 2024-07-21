@@ -1,8 +1,8 @@
-const Button = ({direction}) => {
+const Button = ({direction, moveSlide}) => {
 
     return (
         <button onClick={(e) => {
-            console.log(e.target.textContent)
+            moveSlide(direction)
         }}>{direction}</button>
     )
 

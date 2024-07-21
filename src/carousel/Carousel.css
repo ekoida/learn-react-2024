@@ -19,3 +19,14 @@
 .carousel button:last-of-type {
     right: 1%;
 }
+
+.carousel .indicators {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}

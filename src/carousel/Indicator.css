@@ -1,0 +1,9 @@
+.indicator {
+    display: inline-block;
+    width: 10px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    background: rgba(179, 179, 179, 0.438);
+    border-radius: 100%;
+    cursor: pointer;
+}
