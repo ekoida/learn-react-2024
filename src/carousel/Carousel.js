@@ -14,8 +14,10 @@ const Carousel = ({ data }) => {
   const moveSlide = (direction) => {
     if (direction === "Left") {
       setTrackPosition((currentPosition) => (currentPosition === -step * totalSlides ? 0 : currentPosition - step));
+      setActive((currentActive) => (currentActive > totalSlides ? 1 : currentActive + 1));
     } else if (direction === "Right") {
       setTrackPosition((currentPosition) => (currentPosition === 0 ? -step * totalSlides : currentPosition + step));
+      setActive((currentActive) => (currentActive < 1 ? totalSlides : currentActive - 1));
     }
   };
 
@@ -25,8 +27,8 @@ const Carousel = ({ data }) => {
       <Button className="right" moveSlide={moveSlide} direction={"Right"} />
       <Track data={data} position={trackPosition} />
       <div className="indicators">
-        {data.map((entry) => (
-          <Indicator key={entry.title} />
+        {data.map((entry, index) => (
+          <Indicator key={entry.title} active={active === index + 1} />
         ))}
       </div>
     </div>

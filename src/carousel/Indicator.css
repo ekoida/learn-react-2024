@@ -3,11 +3,11 @@
     width: 10px;
     aspect-ratio: 1/1;
     border: 1px solid black;
-    background: rgba(179, 179, 179, 0.438);
+    background: rgba(162, 35, 35, 0.438);
     border-radius: 100%;
     cursor: pointer;
 }
 
 .active {
-    background: rgba(179, 179, 179, 0.438);
+    background: rgba(46, 172, 50, 0.438);
 }
