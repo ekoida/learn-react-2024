@@ -7,3 +7,7 @@
     border-radius: 100%;
     cursor: pointer;
 }
+
+.active {
+    background: rgba(179, 179, 179, 0.438);
+}
