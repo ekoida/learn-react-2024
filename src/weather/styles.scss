@@ -1,0 +1,8 @@
+$size: 150px;
+
+.weather {
+    width: $size;
+    height: $size;
+    border: 1px solid orangered;
+    padding: $size * 0.05;
+}
