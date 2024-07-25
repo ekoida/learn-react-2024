@@ -1,14 +1,9 @@
 import Slide from "./Slide";
 import "./Track.css";
 
-const Track = ({ data, position }) => {
-  console.log(position);
-  return (
-    <div style={{ "--step": `${position}px` }} className="track">
-      {data.map((slideData) => (
-        <Slide data={slideData} key={slideData.image} />
-      ))}
-    </div>
+const Track = ({ slide }) => {
+  return ( 
+        <Slide data={slide} key={slide.image} />
   );
 };
 

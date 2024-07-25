@@ -5,30 +5,37 @@ import Indicator from "./Indicator";
 import "./Carousel.css";
 
 const Carousel = ({ data }) => {
-  const step = 600;
-  const totalSlides = data.length - 1;
-
-  const [trackPosition, setTrackPosition] = useState(0);
-  const [active, setActive] = useState(1);
+  const [prev, setPrev] = useState(data.length - 1)
+  const [current, setCurrent] = useState(0)
+  const [next, setNext] = useState(1)
 
   const moveSlide = (direction) => {
     if (direction === "Left") {
-      setTrackPosition((currentPosition) => (currentPosition === -step * totalSlides ? 0 : currentPosition - step));
-      setActive((currentActive) => (currentActive > totalSlides ? 1 : currentActive + 1));
+      setPrev(state => state === 0 ? data.length -1: state -1)
+      setCurrent(prev)
+      setNext(current)
+    
     } else if (direction === "Right") {
-      setTrackPosition((currentPosition) => (currentPosition === 0 ? -step * totalSlides : currentPosition + step));
-      setActive((currentActive) => (currentActive < 1 ? totalSlides : currentActive - 1));
+      setPrev(current)
+      setCurrent(next)
+      setNext(state => state >= data.length - 1 ? 0 : state + 1)
     }
   };
+
+  const goTo = (index) => {
+    setPrev(index === 0 ? data.length - 1 : index - 1)
+    setCurrent(index)
+    setNext(index === data.length - 1 ? 0 : index + 1)
+  }
 
   return (
     <div className="carousel">
       <Button className="left" moveSlide={moveSlide} direction={"Left"} />
       <Button className="right" moveSlide={moveSlide} direction={"Right"} />
-      <Track data={data} position={trackPosition} />
+      <Track slide={data[current]} />
       <div className="indicators">
         {data.map((entry, index) => (
-          <Indicator key={entry.title} active={active === index + 1} />
+          <Indicator key={entry.title} active={current === index} index={index} goTo={goTo} />
         ))}
       </div>
     </div>

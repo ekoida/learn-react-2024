@@ -1,5 +1,5 @@
 .track {
-    --step: 0px;
+    --step: 600px;
     width: max-content;
     translate: var(--step);
     transition: translate 0.3s ease-in-out;

@@ -1,7 +1,7 @@
 const Button = ({direction, moveSlide}) => {
 
     return (
-        <button onClick={(e) => {
+        <button onClick={() => {
             moveSlide(direction)
         }}>{direction}</button>
     )
