@@ -16,9 +16,6 @@ export const Weather = () => {
                 setData(response)
             })
             .catch(error => console.log(error))
-            .finally(() => {
-                console.log(data)
-            })
         },
          (error) => {
             console.log(error)
@@ -27,7 +24,9 @@ export const Weather = () => {
 
     return (
         <div className='weather'>
-            <p>Hello weather</p>
+            <p>{data.name}</p>
+            <p>temperature: {data.main.temp}</p>
+            <p>clouds: {data.clouds.all}</p>
         </div>
     )
 }

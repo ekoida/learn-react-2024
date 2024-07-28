@@ -1,5 +1,4 @@
 const HOST = 'https://api.openweathermap.org/data/2.5/weather'
-const KEY = '13f21668a6b69571d63bc59c79d69966'
 
 export const getForecast = async (position) => {
     console.log(position)
@@ -9,7 +8,7 @@ export const getForecast = async (position) => {
         lat: latitude,
         lon: longitude,
         units: 'metric',
-        appid: KEY
+        appid: '13f21668a6b69571d63bc59c79d69966'
     })
     try {
         const response = await fetch(`${HOST}?${params}`)
