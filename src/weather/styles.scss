@@ -5,4 +5,16 @@ $size: 150px;
     height: $size;
     border: 1px solid orangered;
     padding: $size * 0.05;
+
+
+    & .button-more {
+        display: inline-flex;
+        flex-direction: row;
+        max-height: 48px;
+        cursor: pointer;
+
+        & .icon {
+            height: 34px;
+        }
+    }
 }

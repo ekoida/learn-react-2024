@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
-import {getForecast } from './api';
+import {getForecast, ICON_HOST } from './api';
+import {ReactComponent as IconRight} from '../icons/arrow-right-circle.svg'
+import { Forecast } from './forecast';
 import './styles.scss';
 
 export const Weather = () => {
    const [data, setData] = useState(null)
+   const [showMore, setShowMore] = useState(false)
 
     useEffect(() => {
         if(!window.navigator.geolocation) {
@@ -22,11 +25,29 @@ export const Weather = () => {
         })
     }, [])
 
+
+    // this method works as simmple true/false switcher
+    // if showMore state is false it will converti it to true and vice versa
+    const toggleForecast = () => {
+        setShowMore(state => !state)
+    }
+
     return (
         <div className='weather'>
-            <p>{data.name}</p>
-            <p>temperature: {data.main.temp}</p>
-            <p>clouds: {data.clouds.all}</p>
+            <p>
+                {data?.name}
+                {/* show icon using the api for icons from openweather */}
+                <img src={`${ICON_HOST}${data?.weather[0].icon}.png`} title={data?.weather[0].description} alt={data?.weather[0].description} />
+            </p>
+            <p>temperature: {data?.main.temp}</p>
+            <p>clouds: {data?.clouds.all}</p>
+            <button 
+                className='button-more'
+                onClick={toggleForecast}>
+                    See Forecast <IconRight className='icon' />
+            </button>
+            {/* render Forecast component if the showMore is true */}
+            {showMore && <Forecast/>}
         </div>
     )
 }
