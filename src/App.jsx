@@ -3,7 +3,7 @@ import { Weather } from "./weather/weather";
 const App = () => {
   return (
     <div>
-      <Weather/>
+      <Weather />
     </div>
   );
 };

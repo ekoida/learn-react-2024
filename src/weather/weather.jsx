@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getForecast, ICON_HOST } from "./api";
-import { ReactComponent as IconRight } from "../icons/arrow-right-circle.svg";
+import IconRight from "../icons/arrow-right-circle.svg?react";
 import { Forecast } from "./forecast";
 import "./styles.scss";
 
@@ -30,13 +30,7 @@ export const Weather = () => {
   // this method works as simmple true/false switcher
   // if showMore state is false it will converti it to true and vice versa
   const toggleForecast = () => {
-    setShowMore((state) => {
-      if (state === true) {
-        state = false;
-      } else {
-        state = true;
-      }
-    });
+    setShowMore((state) => !state);
   };
 
   return (
