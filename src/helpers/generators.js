@@ -1,5 +1,5 @@
 const randInt = (min = 0, max = 1) => {
-  return Math.floor(Math.random() * (max - min) + min);
+  return Number((Math.random() * (max - min) + min).toFixed(2));
 };
 
 const randColor = ({ redish = 1, greeenish = 1, blueish = 1 } = {}) => {
